@@ -1,0 +1,13 @@
+importFrom(Rcpp,evalCpp)
+import(Rcpp)
+import(energy)
+import(Rfast)
+import(mvtnorm)
+import(randtoolbox)
+import(sde)
+import(transport)
+import(LaplacesDemon)
+import(extraDistr)
+
+exportPattern("^[[:alpha:]]+")
+useDynLib(RECP,.registration=TRUE)
