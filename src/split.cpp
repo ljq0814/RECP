@@ -99,4 +99,52 @@ SEXP split_re( SEXP s_, SEXP e_, SEXP D_, SEXP min_size_ ){
 
   END_RCPP
 }
+// [[Rcpp::export]]
+SEXP dista_cpp(SEXP X_, SEXP grid_) {
+  BEGIN_RCPP
+  try {
+    NumericMatrix X(X_), grid(grid_);
+    int n = X.nrow(), m = grid.nrow();
+    NumericMatrix distmat(n, m);
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        NumericVector diff = X(i, _) - grid(j, _);
+        distmat(i, j) = sum(diff * diff);  // 直接算平方距离
+      }
+    }
+    return wrap(distmat);
+  }
+  catch (std::exception& ex) {
+    forward_exception_to_r(ex);
+  }
+  catch (...) {
+    Rf_error("unknown C++ exception");
+  }
+  END_RCPP
+}
 
+// [[Rcpp::export]]
+SEXP Dist_cpp(SEXP X_) {
+  BEGIN_RCPP
+  try {
+    NumericMatrix X(X_);
+    int n = X.nrow();
+    NumericMatrix distmat(n, n);
+    for (int i = 0; i < n; i++) {
+      for (int j = i + 1; j < n; j++) {
+        NumericVector diff = X(i, _) - X(j, _);
+        double d = sqrt(sum(diff * diff));
+        distmat(i, j) = d;
+        distmat(j, i) = d;  // 对称
+      }
+    }
+    return wrap(distmat);
+  }
+  catch (std::exception& ex) {
+    forward_exception_to_r(ex);
+  }
+  catch (...) {
+    Rf_error("unknown C++ exception");
+  }
+  END_RCPP
+}

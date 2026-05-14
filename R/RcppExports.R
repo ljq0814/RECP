@@ -13,3 +13,11 @@ split_re <- function(s_, e_, D_, min_size_) {
     .Call(`_RECP_split_re`, s_, e_, D_, min_size_)
 }
 
+dista_cpp <- function(X_, grid_) {
+    .Call(`_RECP_dista_cpp`, X_, grid_)
+}
+
+Dist_cpp <- function(X_) {
+    .Call(`_RECP_Dist_cpp`, X_)
+}
+

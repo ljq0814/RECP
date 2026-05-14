@@ -14,7 +14,7 @@ Description: This package provides nonparametric methods for detecting and locat
     by theoretical guarantees for change point location estimation.
 License: MIT + file LICENSE
 LinkingTo: Rcpp
-Imports: Rcpp, Rfast, randtoolbox, sde, transport
+Imports: Rcpp, randtoolbox, sde, transport
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3

@@ -201,10 +201,10 @@ eigencompute <- function(D,n){
 compute_ranks <- function(x, beta){
   n <- nrow(x); d <- ncol(x)
   grid     <- matrix(randtoolbox::halton(n, dim = d), ncol = d)
-  distmat  <- Rfast::dista(xnew = x, x = grid)^2
+  distmat  <- dista_cpp(x, grid)
   solution <- transport::transport(rep(1/n, n), rep(1/n, n), p = 2, method = 'networkflow', costm = distmat)
   co_rank <- matrix(grid[solution[, 2],], ncol = d)
-  return((Rfast::Dist(co_rank))^beta)
+  return(Dist_cpp(co_rank)^beta)
 }
 
 #' Single Permutation Statistic

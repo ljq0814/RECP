@@ -49,11 +49,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// dista_cpp
+SEXP dista_cpp(SEXP X_, SEXP grid_);
+RcppExport SEXP _RECP_dista_cpp(SEXP X_SEXP, SEXP grid_SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type X_(X_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type grid_(grid_SEXP);
+    rcpp_result_gen = Rcpp::wrap(dista_cpp(X_, grid_));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Dist_cpp
+SEXP Dist_cpp(SEXP X_);
+RcppExport SEXP _RECP_Dist_cpp(SEXP X_SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type X_(X_SEXP);
+    rcpp_result_gen = Rcpp::wrap(Dist_cpp(X_));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RECP_getWithin", (DL_FUNC) &_RECP_getWithin, 2},
     {"_RECP_getBetween", (DL_FUNC) &_RECP_getBetween, 3},
     {"_RECP_split_re", (DL_FUNC) &_RECP_split_re, 4},
+    {"_RECP_dista_cpp", (DL_FUNC) &_RECP_dista_cpp, 2},
+    {"_RECP_Dist_cpp", (DL_FUNC) &_RECP_Dist_cpp, 1},
     {NULL, NULL, 0}
 };
 
