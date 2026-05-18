@@ -8,4 +8,5 @@
 *.so
 *.dll
 *.Rproj
+*.Rcheck/
 README.html
