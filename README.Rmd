@@ -1,5 +1,5 @@
 ---
-title: "RECP"
+title: "Single change point test by multivariate ranks-based energy statistics (RECP)"
 output: github_document
 ---
 

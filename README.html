@@ -601,15 +601,18 @@ padding-top: 0px;
 
 <body>
 
-<h1 id="recp">RECP</h1>
+<h1 id="single-change-point-test-by-multivariate-ranks-based-energy-statistics-recp">Single
+change point test by multivariate ranks-based energy statistics
+(RECP)</h1>
 <h2 id="overview">Overview</h2>
 <p><code>RECP</code> provides nonparametric methods for detecting and
-locating a single change point in multivariate data sequences. The
+locating a single change point in multivariate data sequences. This
 package implements a rank energy statistic constructed from multivariate
 ranks defined via optimal transport theory. The asymptotic null
-distribution is distribution-free, enabling universal rejection
-thresholds across different sample sizes. Two testing procedures are
-provided:</p>
+distribution is exactly distribution-free. This property enables us to
+develop a computationally feasible algorithm for computing universal
+rejection thresholds across different sample sizes, which is applicable
+for long data sequences. Two testing procedures are provided:</p>
 <ul>
 <li><code>rank_energy_perm()</code>: Rank Energy Change Point Test via
 permutation (REp)</li>

@@ -1,7 +1,6 @@
----
-title: "RECP"
-output: github_document
----
+Single change point test by multivariate ranks-based energy statistics
+(RECP)
+================
 
 ## Overview
 
@@ -9,13 +8,15 @@ output: github_document
 single change point in multivariate data sequences. This package
 implements a rank energy statistic constructed from multivariate ranks
 defined via optimal transport theory. The asymptotic null distribution
-is exactly distribution-free. This property enables us to develop a computationally feasible
-algorithm for computing universal rejection thresholds across
-different sample sizes, which is applicable for long data sequences. Two testing procedures are provided:
+is exactly distribution-free. This property enables us to develop a
+computationally feasible algorithm for computing universal rejection
+thresholds across different sample sizes, which is applicable for long
+data sequences. Two testing procedures are provided:
 
-
-- `rank_energy_perm()`: Rank Energy Change Point Test via permutation (REp)
-- `rank_energy_eig()`: Rank Energy Change Point Test via limiting spectral distribution (REs)
+- `rank_energy_perm()`: Rank Energy Change Point Test via permutation
+  (REp)
+- `rank_energy_eig()`: Rank Energy Change Point Test via limiting
+  spectral distribution (REs)
 
 ## Installation
 
@@ -49,4 +50,8 @@ print(rank_energy_eig(x))
 ```
 
 ## Reference
-Liu, Y., Li, J., Li, Z., Wang, J., & Wang, M. (2025). Testing the distribution change in multivariate data using rank energy statistics. *Journal of Applied Statistics*, 1–19. https://doi.org/10.1080/02664763.2025.2578653
+
+Liu, Y., Li, J., Li, Z., Wang, J., & Wang, M. (2025). Testing the
+distribution change in multivariate data using rank energy statistics.
+*Journal of Applied Statistics*, 1–19.
+<https://doi.org/10.1080/02664763.2025.2578653>
