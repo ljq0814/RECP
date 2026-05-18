@@ -1,6 +1,6 @@
 Package: RECP
 Title: Rank Energy Change Point Test for Multivariate Data
-Version: 1.0.0.0
+Version: 1.0.0
 Authors@R: 
     person("Jiaqi", "Li", , "ljq0814nana@gmail.com", role = c("aut", "cre"))
 Description: This package provides nonparametric methods for detecting and locating a single
