@@ -218,7 +218,7 @@ compute_ranks <- function(x, beta){
 #'
 #' @return A numeric scalar giving the permuted test statistic.
 #'
-#' @keywords internal
+#' @noRd
 perm_once <- function(D, n, min_size){
   shuffle <- sample(1:n)
   return(split_re(s_ = 1, e_ = n, D_ = D[shuffle, shuffle], min_size_ = min_size)[2])
